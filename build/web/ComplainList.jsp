@@ -1,14 +1,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="shared/header.jsp"%>
-<jsp:useBean id="dao" class="com.leapfrog.daoimpl.ComplainDaoimpl"/>
-<jsp:useBean id="complain" class="com.leapfrog.entity.Complain"/>
- 
-<c:forEach var="complain" items="${dao.all}">
+<c:forEach var="complain" items="${complainList}">
     <H1>${complain.title}</H1>
-    <p>${complain.description}</p>
-    <div class="form-group">
-        <a href="ReadWhole.jsp?id=${complain.clientId}">Read More</a>
+    <div class="read-more">
+        <p>${fn:substring(complain.description,0, 10)}</p>
+        <a href="ReadWhole?id=${complain.id}">Read More</a>
     </div>
+    
 </c:forEach>
-   
-
