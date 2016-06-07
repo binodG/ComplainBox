@@ -9,11 +9,35 @@
     <servlet-class>com.leapfrog.Servlet.InsertComplain</servlet-class>
     </servlet>
     
+    <servlet>
+    <servlet-name>LoadServlet</servlet-name>
+    <servlet-class>com.leapfrog.Servlet.LoadServlet</servlet-class>
+    </servlet>
+    
+     <servlet>
+    <servlet-name>ReadWhole</servlet-name>
+    <servlet-class>com.leapfrog.Servlet.ReadWholeServlet</servlet-class>
+    </servlet>
+
+    
     <servlet-mapping>
     <servlet-name>InsertComplain</servlet-name>
     <url-pattern>/insertcomplain</url-pattern>    
-        
+     </servlet-mapping> 
+     
+
+    
+    <servlet-mapping>
+    <servlet-name>LoadServlet</servlet-name>
+    <url-pattern>/LoadServlet</url-pattern>    
     </servlet-mapping>
+    
+    <servlet-mapping>
+    <servlet-name>ReadWhole</servlet-name>
+    <url-pattern>/ReadWhole</url-pattern>    
+     </servlet-mapping> 
+        
+   
     
     <session-config>
         <session-timeout>
